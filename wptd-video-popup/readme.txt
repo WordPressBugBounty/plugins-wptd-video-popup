@@ -1,5 +1,5 @@
-﻿=== Video Popup for Elementor - WPTD ===
-Contributors: wpthemedevelopers
+﻿=== Video Popup for Elementor ===
+Contributors: zelvigo
 Tags: video popup, youtube lightbox, vimeo lightbox, popup video, video lightbox, lightbox, icon to video popup
 Requires at least: 3.0
 Tested up to: 6.4.1
@@ -34,23 +34,12 @@ Magnific video popup, new design, responsive lightbox, popup video with fade eff
 1. Easy to Use.
 1. Customizing the width and height size for YouTube and Vimeo video.
 
-### Live Demo
-
-* [WPTD Video Popup Live Demo](https://wpthemedevelopers.com/wptd-video-popup/)
-
-### Contact Us for More Works
-
-* [WordPress Theme Developers](https://wpthemedevelopers.com/contact/)
-* [Wide News Hub](https://widenewshub.com/contact/)
-* [EMI Calculator Plugin Work Sample](https://widenewshub.com/emi-calculator-for-home-loan-car-loan-personal-loan-in-india/)
-
 == Installation ==
 
 ### Installation
 
 1. Upload 'wptd-video-popup' folder to the '/wp-content/plugins/' directory.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
-3. Now read [How of Use](https://wpthemedevelopers.com/wptd-video-popup/)
 
 == Frequently Asked Questions ==
 
@@ -66,7 +55,7 @@ Absolutely! It will work with any theme where Elementor works.
 
 Absolutely! Feel free contact us. We can upgrade or create plugins.
 
-* [WP Theme Developers](https://wpthemedevelopers.com/)
+* [Zelvigo](https://zelvigo.com/)
 
 == Screenshots ==
 
@@ -81,6 +70,12 @@ Absolutely! Feel free contact us. We can upgrade or create plugins.
 9. **Blue Video Bg.** This is preview for example blue background video bg.
 
 == Changelog ==
+
+= 1.6.0 =
+* Rebranded plugin under Zelvigo
+* Updated WordPress and PHP compatibility
+* Updated documentation and support links
+* General maintenance and security improvements
 
 = 1.5.1 =
 

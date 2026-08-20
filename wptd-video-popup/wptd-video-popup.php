@@ -1,11 +1,14 @@
 <?php 
 /*
-Plugin Name: WPTD Video Popup
+Plugin Name: Video Popup for Elementor
+Author: Zelvigo
+Author URI: https://zelvigo.com
 Plugin URI: https://plugins.wpthemedevelopers.com/wptd-video-popup
-Description: Simple video popup plugin for elementor. You can make video lightbox popup in elementor. YouTube, Vimeo videos are supported. Here we used magnific popup js.
-Version: 1.5.1
-Author: wpthemedevelopers
-Author URI: https://wpthemedevelopers.com
+Version: 1.6.0
+Requires at least: 6.0
+Requires PHP: 7.4
+Tested up to: 7.1
+Text Domain: wptd-video-popup
 */
 
 if ( ! defined( 'ABSPATH' ) ) {
