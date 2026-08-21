@@ -1,75 +1,102 @@
 ﻿=== Video Popup for Elementor ===
 Contributors: zelvigo
-Tags: video popup, youtube lightbox, vimeo lightbox, popup video, video lightbox, lightbox, icon to video popup
-Requires at least: 3.0
-Tested up to: 6.4.1
-Requires PHP: 5.6
-Stable tag: 1.5.1
+Tags: video popup, youtube lightbox, vimeo lightbox, gutenberg block, video lightbox, elementor
+Requires at least: 6.0
+Tested up to: 6.7
+Requires PHP: 7.4
+Stable tag: 1.8.0
 License: GPLv3
-License URI: https://www.gnu.org/licenses/gpl-3.0.html
+License URI: https://gnu.org
 
-Simple video popup plugin for elementor. You can make video lightbox popup in elementor. YouTube, Vimeo videos are supported. Here we used magnific popup js. In future page load popup will be available. You can make light video easily though this plugin.
+Create beautiful video lightbox popups with Gutenberg, shortcode, or Elementor. Supports YouTube and Vimeo videos using lightweight Magnific Popup.
 
 == Description ==
 
-### The #1 WordPress Video Lightbox Plugin
+### WordPress Video Lightbox Plugin
 
-Simple video popup plugin for elementor. You can make video lightbox popup in elementor. YouTube, Vimeo videos are supported. Here we used magnific popup js. In future page load popup will be available. You can make light video easily though this plugin.
+Video Popup is a lightweight plugin for creating YouTube and Vimeo lightbox popups on any WordPress site. Use the **Gutenberg block**, **shortcode**, or **Elementor widget** — Elementor is optional.
 
-### Rate
+Built with Magnific Popup for a fast, responsive lightbox experience with a smooth fade effect.
 
-* [Please rate the plugin](https://wordpress.org/support/plugin/wptd-video-popup/reviews/?filter=5)
-* [Read people reviews](https://wordpress.org/support/plugin/wptd-video-popup/reviews/?filter=5)
+### WordPress Developer Studio
+* [Zelvigo Dev Studio](https://zelvigo.com/)
 
-### The Features
+### Features
 
-Magnific video popup, new design, responsive lightbox, popup video with fade effect, and many features:
+* **Gutenberg block** — add video popups from the block editor (Zelvigo block category)
+* **Shortcode** — `[wptd_video_popup]` works on any page or post
+* **Elementor widget** — optional, loads only when Elementor is active
+* **Trigger types** — text, icon, or image
+* **YouTube & Vimeo** — including `youtu.be` short links
+* **Popup width** — customize max video width in pixels
+* **Overlay color & opacity** — theme color palette plus opacity slider (0–100%)
+* **Autoplay** — play video when the popup opens (enabled by default)
+* **Responsive & retina ready** — works on all screen sizes
 
-1. YouTube, Vimeo video support.
-1. Unlimited popup’s.
-1. Responsive style.
-1. Retina ready.
-1. Trigger type image, text, icon is possible
-1. Easy shortcode and understandable parameters
-1. Easy to Use.
-1. Customizing the width and height size for YouTube and Vimeo video.
+### Gutenberg Block Settings
+
+* Video URL (YouTube or Vimeo)
+* Autoplay video (on/off)
+* Trigger type: text, icon, or image
+* Popup width (px)
+* Overlay background color (theme palette)
+* Overlay opacity (%)
+
+### Shortcode Example
+
+`[wptd_video_popup url="https://www.youtube.com/watch?v=VIDEO_ID" trigger="text" text="Watch Video" width="900" bg_color="rgba(0,0,0,0.5)" autoplay="1"]`
+
+**Parameters:** `url`, `trigger` (text|icon|img), `text`, `icon`, `img`, `width`, `bg_color`, `autoplay`, `extra_class`
 
 == Installation ==
 
-### Installation
-
-1. Upload 'wptd-video-popup' folder to the '/wp-content/plugins/' directory.
-2. Activate the plugin through the 'Plugins' menu in WordPress.
+1. Upload the `wptd-video-popup` folder to `/wp-content/plugins/`.
+2. Activate the plugin through the **Plugins** menu in WordPress.
+3. Add a **Video Popup** block in the editor, use the shortcode, or add the Elementor widget.
 
 == Frequently Asked Questions ==
 
-**Can I use the plugin without Elementor Page Builder?**
+= Can I use the plugin without Elementor? =
 
-No. You cannot use without Elementor since it’s an addon for Elementor.
+Yes. The Gutenberg block and shortcode work without Elementor. The Elementor widget is an optional enhancement when Elementor is installed.
 
-**Does it work with any theme?**
+= Does it work with any theme? =
 
-Absolutely! It will work with any theme where Elementor works.
+Yes. It works with any WordPress theme that supports the block editor or shortcodes.
 
-**Can I extend the plugin or options?**
+= Does autoplay work on mobile? =
 
-Absolutely! Feel free contact us. We can upgrade or create plugins.
+Autoplay runs when the visitor clicks the trigger and the popup opens. Some mobile browsers may restrict autoplay with sound; the user may need to tap play inside the video player.
 
-* [Zelvigo](https://zelvigo.com/)
+= Can I extend the plugin? =
+
+Yes. Contact us at [Zelvigo](https://zelvigo.com/) for custom features or integrations.
 
 == Screenshots ==
 
-1. **Video Popup Elementor Shortcode.** WPTD video popup main settings page. Here we explained how to add video popup shortcode from elementor shortcodes.
-2. **Video Popup Normal Shortcode.** This is normal video popup shortcode. We explained here about shortcode parameters.
-3. **Elementor Shortcode Search.** This is preview for wptd video popup shortcode seach on elementor
-4. **Elementor Shortcode Options.** This is preview for video popup elementor shortcode options.
-5. **Normal Shortcode With Parameters.** This is preview for video popup normal shortcode and parameters.
-6. **Popup Triggers.** This preview shows out put variations of video popup
-7. **Black Transparent Bg.** This is preview for example black transparent background video bg.
-8. **Rad Transparent Bg.** This is preview for example red transparent background video bg.
-9. **Blue Video Bg.** This is preview for example blue background video bg.
+1. Video Popup Gutenberg block in the block editor.
+2. Video Popup Elementor widget settings.
+3. Video Popup shortcode documentation in admin.
+4. Text, icon, and image trigger examples.
+5. Frontend lightbox popup with YouTube video Sample 1
+6. Frontend lightbox popup with YouTube video Sample 2
+7. Frontend lightbox popup with YouTube video Sample 3
 
 == Changelog ==
+
+= 1.8.0 =
+* Added native **Gutenberg block** (`wptd/video-popup`) under the Zelvigo block category
+* Added shared renderer architecture for shortcode and block output
+* **Shortcode and Gutenberg block now work without Elementor** — Elementor widget remains optional
+* Removed admin notice requiring Elementor to be installed
+* Gutenberg block settings: video URL, trigger type (text/icon/image), popup width, overlay color, overlay opacity, autoplay
+* Added **overlay opacity slider** (0–100%) with theme color palette for overlay background
+* Added **autoplay** option — plays video when popup opens (enabled by default)
+* Added **youtu.be** short URL support for YouTube videos
+* Improved block editor preview — shows trigger only (no broken iframe preview)
+* Refactored frontend JavaScript for per-popup autoplay and embed URL handling
+* Added `package.json` and block source files for optional `@wordpress/scripts` build
+* Updated plugin description, FAQ, and compatibility (WordPress 6.0+, PHP 7.4+)
 
 = 1.6.0 =
 * Rebranded plugin under Zelvigo
@@ -78,35 +105,32 @@ Absolutely! Feel free contact us. We can upgrade or create plugins.
 * General maintenance and security improvements
 
 = 1.5.1 =
-
 * Fixed $cur_class issue
 
 = 1.5 =
-
 * Added allowfullscreen property for video iframe
 
 = 1.4 =
-
 * Updated elementor _register_controls deprecation issue
 
 = 1.3 =
-
 * Updated js code for mobile popup issue
 
 = 1.2.1 =
-
 * Updated js code for dynamic loaded content
 
 = 1.2 =
-
-* Removedsome unwanted files and reduced styles.
+* Removed some unwanted files and reduced styles.
 
 = 1.1 =
-
 * Video Popup elementor shortcode added.
 * Video frame style updated
-* POT(translation strings) file updated.
+* POT (translation strings) file updated.
 
 = 1.0.0 =
+* Initial release.
 
-* Intial release.
+== Upgrade Notice ==
+
+= 1.8.0 =
+Major update: Gutenberg block support, no Elementor required for shortcode/block, autoplay, overlay opacity, and youtu.be URL support.

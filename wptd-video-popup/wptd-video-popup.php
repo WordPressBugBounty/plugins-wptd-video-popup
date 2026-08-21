@@ -1,10 +1,11 @@
 <?php 
 /*
 Plugin Name: Video Popup for Elementor
+Description: Create beautiful video lightbox popups with Gutenberg, shortcode, or Elementor. Supports YouTube and Vimeo videos using lightweight Magnific Popup.
 Author: Zelvigo
 Author URI: https://zelvigo.com
-Plugin URI: https://plugins.wpthemedevelopers.com/wptd-video-popup
-Version: 1.6.0
+Plugin URI: https://wordpress.org/plugins/wptd-video-popup/
+Version: 1.8.0
 Requires at least: 6.0
 Requires PHP: 7.4
 Tested up to: 7.1
@@ -17,6 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 define( 'WPTD_EVP_DIR', plugin_dir_path( __FILE__ ) );
 define( 'WPTD_EVP_URL', plugin_dir_url( __FILE__ ) );
+define( 'WPTD_EVP_VERSION', '1.8.0' );
 
 /*
 * Intialize and Sets up the plugin
@@ -25,7 +27,7 @@ class WPTD_Elementor_Video_Popup {
 	
 	private static $_instance = null;
 	
-	public static $version = '1.5.1';
+	public static $version = '1.8.0';
 	
 	/**
 	* Sets up needed actions/filters for the plug-in to initialize.
@@ -38,8 +40,8 @@ class WPTD_Elementor_Video_Popup {
 		//WPTD video popup setup page
 		add_action( 'plugins_loaded', array( $this, 'wptd_elementor_video_popup_setup') );
 		
-		//WPTD video popup shortcodes
-		add_action( 'init', array( $this, 'wptd_elementor_video_init_addons' ), 20 );
+		// Load shortcode, block, and optional Elementor widget
+		add_action( 'plugins_loaded', array( $this, 'wptd_elementor_video_init_addons' ), 20 );
 		
 	}
 	
@@ -69,11 +71,16 @@ class WPTD_Elementor_Video_Popup {
 	* @return void
 	*/
 	public function wptd_elementor_video_init_addons() {
-		//Settings
-		require_once ( WPTD_EVP_DIR . 'admin/wptd-settings.php' );
-		
-		//Addon
-		require_once ( WPTD_EVP_DIR . 'inc/class.elementor.settings.php' );
+		// Settings
+		require_once WPTD_EVP_DIR . 'admin/wptd-settings.php';
+
+		// Shared renderer, shortcode, and Gutenberg block (no Elementor required)
+		require_once WPTD_EVP_DIR . 'inc/class.renderer.php';
+		require_once WPTD_EVP_DIR . 'widgets/video-popup-wp-shortcodes.php';
+		require_once WPTD_EVP_DIR . 'inc/class.gutenberg.php';
+
+		// Elementor widget (only when Elementor is active)
+		require_once WPTD_EVP_DIR . 'inc/class.elementor.settings.php';
 	}
 	
 	/**

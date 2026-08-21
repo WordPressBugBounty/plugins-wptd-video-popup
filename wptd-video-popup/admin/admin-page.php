@@ -3,12 +3,12 @@
 	<div class="wptd-header-bar">
 		<div class="wptd-header-left">
 			<div class="wptd-admin-logo-inline">
-			<a href="https://wpthemedevelopers.com/wptd-video-popup/" target="_blank"><img src="<?php echo esc_url( WPTD_EVP_URL . 'assets/images/logo.png' ); ?>" alt="wptd-logo"></a>
+			<a href="https://wordpress.org/plugins/wptd-video-popup//" target="_blank"><img src="<?php echo esc_url( WPTD_EVP_URL . 'assets/images/logo.png' ); ?>" alt="wptd-logo"></a>
 			</div><!-- .wptd-admin-logo-inline -->
 			<h2 class="title"><?php esc_html_e( 'WPTD Video Popup', 'wptd-video-popup' ); ?><span class="wptd-version"><?php echo esc_attr( WPTD_Elementor_Video_Popup::$version ); ?></span></h2>
 		</div><!-- .wptd-header-left -->
 		<div class="wptd-header-right">
-			<a href="https://wpthemedevelopers.com/wptd-video-popup/" target="_blank" class="button wptd-btn"><?php esc_html_e( 'Live Demo', 'wptd-video-popup' ); ?></a>
+			<a href="https://wordpress.org/plugins/wptd-video-popup/" target="_blank" class="button wptd-btn"><?php esc_html_e( 'Live Demo', 'wptd-video-popup' ); ?></a>
 		</div><!-- .wptd-header-right -->
 	</div><!-- .wptd-header-bar -->
 

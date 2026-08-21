@@ -36,9 +36,6 @@ final class Elementor_Video_Popup_Shortcode {
 		
 		// Register Widget Scripts
 		add_action( 'elementor/frontend/after_register_scripts', [ $this, 'widget_scripts' ] );
-		
-		// Include WP Video Popup Shortcode
-		$this->init_shortcode();
 	}
 	
 	/**
@@ -81,17 +78,6 @@ final class Elementor_Video_Popup_Shortcode {
 		
 		//Call Widget Class
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor_Video_Popup_Widget() );
-	}
-	
-	/**
-	 * Include WP Shortcode
-	 * Include default wp video popup shortcode 
-	 * @since 1.0.0
-	 * @access public
-	 */
-	public function init_shortcode() {
-		// Connect Shortcode File
-		require_once( WPTD_EVP_DIR . 'widgets/video-popup-wp-shortcodes.php' );
 	}
 	
 	public static function get_random_series(){
