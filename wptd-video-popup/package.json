@@ -1,0 +1,13 @@
+{
+	"name": "wptd-video-popup",
+	"version": "1.8.0",
+	"description": "Video Popup WordPress plugin with Gutenberg block",
+	"private": true,
+	"scripts": {
+		"build": "wp-scripts build blocks/video-popup/index.js --output-path=blocks/video-popup/build",
+		"start": "wp-scripts start blocks/video-popup/index.js --output-path=blocks/video-popup/build"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^30.7.0"
+	}
+}

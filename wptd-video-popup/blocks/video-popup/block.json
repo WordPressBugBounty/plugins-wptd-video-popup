@@ -1,0 +1,60 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "wptd/video-popup",
+	"version": "1.8.0",
+	"title": "Video Popup",
+	"category": "wptd",
+	"icon": "video-alt3",
+	"description": "Create a video lightbox popup for YouTube or Vimeo.",
+	"keywords": [ "video", "popup", "lightbox", "youtube", "vimeo" ],
+	"textdomain": "wptd-video-popup",
+	"attributes": {
+		"url": {
+			"type": "string",
+			"default": ""
+		},
+		"width": {
+			"type": "number",
+			"default": 0
+		},
+		"trigger": {
+			"type": "string",
+			"default": "text"
+		},
+		"text": {
+			"type": "string",
+			"default": "Click"
+		},
+		"icon": {
+			"type": "string",
+			"default": ""
+		},
+		"img": {
+			"type": "string",
+			"default": ""
+		},
+		"imgId": {
+			"type": "number",
+			"default": 0
+		},
+		"bgColor": {
+			"type": "string",
+			"default": "#000000"
+		},
+		"bgOpacity": {
+			"type": "number",
+			"default": 50
+		},
+		"autoplay": {
+			"type": "boolean",
+			"default": true
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ]
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css"
+}

@@ -1,0 +1,23 @@
+.wptd-video-popup-media {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	margin-bottom: 12px;
+}
+
+.wptd-video-popup-media img {
+	max-width: 100%;
+	height: auto;
+	border-radius: 4px;
+}
+
+.editor-styles-wrapper .wptd-popup-video {
+	display: inline-block;
+	cursor: default;
+	pointer-events: none;
+}
+
+.editor-styles-wrapper .wptd-popup-type-img img {
+	max-width: 100%;
+	height: auto;
+}

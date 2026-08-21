@@ -5,7 +5,7 @@ Description: Create beautiful video lightbox popups with Gutenberg, shortcode, o
 Author: Zelvigo
 Author URI: https://zelvigo.com
 Plugin URI: https://wordpress.org/plugins/wptd-video-popup/
-Version: 1.8.0
+Version: 1.8.1
 Requires at least: 6.0
 Requires PHP: 7.4
 Tested up to: 7.1
@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 define( 'WPTD_EVP_DIR', plugin_dir_path( __FILE__ ) );
 define( 'WPTD_EVP_URL', plugin_dir_url( __FILE__ ) );
-define( 'WPTD_EVP_VERSION', '1.8.0' );
+define( 'WPTD_EVP_VERSION', '1.8.1' );
 
 /*
 * Intialize and Sets up the plugin
@@ -27,7 +27,7 @@ class WPTD_Elementor_Video_Popup {
 	
 	private static $_instance = null;
 	
-	public static $version = '1.8.0';
+	public static $version = '1.8.1';
 	
 	/**
 	* Sets up needed actions/filters for the plug-in to initialize.

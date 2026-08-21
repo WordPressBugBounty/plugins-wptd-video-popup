@@ -1,10 +1,10 @@
 ﻿=== Video Popup for Elementor ===
 Contributors: zelvigo
-Tags: video popup, youtube lightbox, vimeo lightbox, gutenberg block, video lightbox, elementor
+Tags: video popup, youtube lightbox, vimeo lightbox, gutenberg block, video lightbox
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 7.4
-Stable tag: 1.8.0
+Stable tag: 1.8.1
 License: GPLv3
 License URI: https://gnu.org
 
