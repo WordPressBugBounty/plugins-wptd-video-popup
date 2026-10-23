@@ -1,95 +1,98 @@
 <?php
 /**
- * WPTD Video Popup Shortcode Class
- * The main class that initiates and runs the plugin. 
+ * WPTD Video Popup Elementor integration.
+ *
+ * @package WPTD_Video_Popup
  * @since 1.0.0
  */
 final class Elementor_Video_Popup_Shortcode {
-	
+
 	/**
 	 * Instance
-	 * @since 1.0.0
-	 * @access private
-	 * @static
-	 * @var Shortcode The single instance of the class.
+	 *
+	 * @var Elementor_Video_Popup_Shortcode|null
 	 */
 	private static $_instance = null;
 
 	/**
 	 * Constructor
-	 * @since 1.0.0
-	 * @access public
 	 */
 	public function __construct() {
-		
 		$this->init();
+	}
 
-	}
-	
-	public function init() {
-			
-		// Create Catgeory
-		$this->create_wptd_elementor_category();
-		
-		// Register Elementor Widgets
-		add_action( 'elementor/widgets/widgets_registered', [ $this, 'init_widgets' ] );
-		
-		// Register Widget Scripts
-		add_action( 'elementor/frontend/after_register_scripts', [ $this, 'widget_scripts' ] );
-	}
-	
 	/**
-     * Register plugin shortcode category
-	 * @since 2.6.8
-	 * @access public
+	 * Register Elementor hooks.
+	 *
 	 * @return void
 	 */
-	public function create_wptd_elementor_category() {
-	   \Elementor\Plugin::instance()->elements_manager->add_category(
+	public function init() {
+		add_action( 'elementor/elements/categories_registered', [ $this, 'create_wptd_elementor_category' ] );
+		add_action( 'elementor/widgets/register', [ $this, 'register_widgets' ] );
+		add_action( 'elementor/frontend/after_register_scripts', [ $this, 'widget_scripts' ] );
+	}
+
+	/**
+	 * Register plugin widget category.
+	 *
+	 * @param \Elementor\Elements_Manager $elements_manager Elementor elements manager.
+	 * @return void
+	 */
+	public function create_wptd_elementor_category( $elements_manager ) {
+		if ( ! $elements_manager ) {
+			return;
+		}
+
+		$elements_manager->add_category(
 			'wptd',
 			array(
-				'title' => esc_html__( 'WPTD', 'wptd-video-popup' )
+				'title' => esc_html__( 'WPTD', 'wptd-video-popup' ),
 			),
-		1);
+			1
+		);
 	}
-	
+
 	/**
-	 * Widget Scripts
-	 * Include widgets scripts
-	 * @since 1.0.0
-	 * @access public
+	 * Register widget scripts and styles.
+	 *
+	 * @return void
 	 */
 	public function widget_scripts() {
-		wp_register_style( 'magnific-popup', WPTD_EVP_URL .'assets/css/magnific-popup.min.css', array(), '1.1.0', 'all');
-		wp_register_style( 'wptd-video-popup', WPTD_EVP_URL .'assets/css/wptd-video-popup.css', array(), '1.0', 'all');
-		wp_register_script( 'magnific-popup', WPTD_EVP_URL . 'assets/js/jquery.magnific.popup.min.js',  array( 'jquery' ), '1.1.0', true );
-		wp_register_script( 'wptd-video-popup', WPTD_EVP_URL . 'assets/js/wptd-video-popup.js',  array( 'jquery' ), '1.0', true );
+		$version = defined( 'WPTD_EVP_VERSION' ) ? WPTD_EVP_VERSION : '1.8.0';
+
+		wp_register_style( 'magnific-popup', WPTD_EVP_URL . 'assets/css/magnific-popup.min.css', array(), '1.1.0', 'all' );
+		wp_register_style( 'wptd-video-popup', WPTD_EVP_URL . 'assets/css/wptd-video-popup.css', array(), $version, 'all' );
+		wp_register_script( 'magnific-popup', WPTD_EVP_URL . 'assets/js/jquery.magnific.popup.min.js', array( 'jquery' ), '1.1.0', true );
+		wp_register_script( 'wptd-video-popup', WPTD_EVP_URL . 'assets/js/wptd-video-popup.js', array( 'jquery' ), $version, true );
 	}
-	
+
 	/**
-	 * Init Widgets
-	 * Include widgets files and register them
-	 * @since 1.0.0
-	 * @access public
+	 * Register Elementor widgets.
+	 *
+	 * @param \Elementor\Widgets_Manager $widgets_manager Elementor widgets manager.
+	 * @return void
 	 */
-	public function init_widgets() {
-		// Connect Widget File
-		require_once( WPTD_EVP_DIR . 'widgets/video-popup-elementor.php' );
-		
-		//Call Widget Class
-		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor_Video_Popup_Widget() );
+	public function register_widgets( $widgets_manager ) {
+		require_once WPTD_EVP_DIR . 'widgets/video-popup-elementor.php';
+
+		if ( method_exists( $widgets_manager, 'register' ) ) {
+			$widgets_manager->register( new \Elementor_Video_Popup_Widget() );
+			return;
+		}
+
+		$widgets_manager->register_widget_type( new \Elementor_Video_Popup_Widget() );
 	}
-	
-	public static function get_random_series(){
+
+	/**
+	 * @return int
+	 */
+	public static function get_random_series() {
 		static $eptd_evp_rand = 1;
 		return $eptd_evp_rand++;
 	}
-	
+
 	/**
-	 * Creates and returns an instance of the class
-	 * @since 2.6.8
-	 * @access public
-	 * return object
+	 * @return Elementor_Video_Popup_Shortcode
 	 */
 	public static function instance() {
 		if ( is_null( self::$_instance ) ) {
@@ -97,7 +100,6 @@ final class Elementor_Video_Popup_Shortcode {
 		}
 		return self::$_instance;
 	}
-	
-	
-} 
+}
+
 Elementor_Video_Popup_Shortcode::instance();

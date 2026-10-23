@@ -1,6 +1,6 @@
 <?php 
 /*
-Plugin Name: Video Popup for Elementor
+Plugin Name: Video Popup - Youtube, Vimeo, Gutenberg, Shortcode, Elementor
 Description: Create beautiful video lightbox popups with Gutenberg, shortcode, or Elementor. Supports YouTube and Vimeo videos using lightweight Magnific Popup.
 Author: Zelvigo
 Author URI: https://zelvigo.com

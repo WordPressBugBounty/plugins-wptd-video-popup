@@ -59,6 +59,15 @@ final class WPTD_Elementor_Addon {
 			return;
 		}
 
+		add_action( 'elementor/init', [ $this, 'load_elementor_integration' ] );
+	}
+
+	/**
+	 * Load Elementor widget after Elementor core is fully initialized.
+	 *
+	 * @return void
+	 */
+	public function load_elementor_integration() {
 		require_once WPTD_EVP_DIR . 'inc/class.video-popup.php';
 	}
 

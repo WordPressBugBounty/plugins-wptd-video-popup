@@ -1,4 +1,4 @@
-﻿=== Video Popup for Elementor ===
+﻿=== Video Popup - Youtube, Vimeo, Gutenberg, Shortcode, Elementor ===
 Contributors: zelvigo
 Tags: video popup, youtube lightbox, vimeo lightbox, gutenberg block, video lightbox
 Requires at least: 6.0
